@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+// Cool mixins
+@import "compass/css3";
+
+// Font stacks
+@import url(http://jesusoterogomez.github.io/css/reset.css); //Normalizes CSS positioning and sizes between browsers
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:900italic);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+
+$font-stack-lato: 'Lato', sans-serif;
+$font-stack-pacifico: 'Pacifico', cursive;
+$font-stack-playfair: 'Playfair Display', serif;
+
+// Defaults
+$contentWidth: 90%;
+$baseFontSize: 120%;
+
+// Fonts
+$defaultFont: $font-stack-lato;
+$logoFont: $font-stack-pacifico;
+$titleFont: $font-stack-pacifico;
+$popupFont: $font-stack-pacifico;
+
+// Color themes
+// https://color.adobe.com/Woman-in-purple-dress-color-theme-32850/
+$color_0: #fff;
+$color_1: #421E4E;
+$color_2: #CC4452;
+$color_3: #F9E4AD;
+$color_4: #723147;
+$color_5: #31152B;
+
+// Apply the color theme
+$fontColor:       $color_0;
+$backgroundColor: $color_1;
+$logoColor:       $color_2;
+$headerColor:     $color_3;
+$featuresColor:   $color_4;
+$footerColor:     $color_5;
+$socialColor:     mix($logoColor, $featuresColor);
+// 'love' section has an in-between color
+$loveColor:       mix($featuresColor, $footerColor);
+
+// Spacing
+$sectionSpacing: 3em;
+
+// Mobile Layout
+
+html{
+  width: 100%;
+  position:relative;
+  color: $fontColor;
+  background:$backgroundColor;
+}
+body{
+  position:relative;
+  font-size: $baseFontSize;
+  font-family:$defaultFont;
+}
+.content{
+  width:$contentWidth;
+  margin:0 auto;
+  text-align:center;
+}
+
+.pitch, .title {
+  font-family: $titleFont;
+  //font-style: italic;
+  font-weight: 100;
+}
+
+// Use nested elements to target child elements in DOM
+.section{
+  padding:$sectionSpacing 0;
+  .title{
+    padding:10px 0;
+    font-size: 1.4em;
+    //font-weight: 700;
+    border-bottom: rgba(255,255,255,0.2) solid 1px;
+    text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+  }
+  .subtitle{
+    padding:10px 0;
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .paragraph{
+    font-size: .9em;
+    line-height: 1.4em;
+    font-weight: 400;
+  }
+  .paragraph, ul {
+    padding:10px 0;
+  }
+  &.logo {
+    font-family: $logoFont;
+    background:  $logoColor;
+
+    h1{
+      font-size: 5em;
+      text-shadow: 4px 3px 0px darken($logoColor, 15%), 9px 8px 0px rgba(0, 0, 0, 0.15);
+      line-height: 1.1em;
+      max-width: 640px;
+      position: relative;
+      margin: 0 auto;
+      .moustache {
+        width: 150px;
+        height: 32px;
+        position: absolute;
+        background-image: url(../media/images/moustache.svg);
+        background-position: left top;
+        background-size: 150px auto;
+        background-repeat: no-repeat;
+        right: 4%;
+        bottom: -8px;
+        @include transform(rotate(-7deg));
+      }
+      .hat {
+        width:  64px;
+        height: 64px;
+        position: absolute;
+        background-image: url(../media/images/hat.svg);
+        background-position: left top;
+        background-size: 64px auto;
+        background-repeat: no-repeat;
+        left: 12%;
+        top:  0;
+      }
+      .moustache, .hat {
+        @include filter(invert(10%) drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.5)));
+      }
+    }
+
+    h2 {
+      font-weight: 100;
+      font-size: 1.55em;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  span.popup {
+    cursor: pointer;
+    position: relative;
+    font-weight: 700;
+    border-bottom: 2px dotted $fontColor;
+  }
+
+  &.header {
+    background: $headerColor;
+    color: $featuresColor;
+  }
+  &.social {
+    background: $socialColor;
+    i {
+      /*width: 50%;*/
+    }
+    nav{
+      //width:100%;
+      //position:relative;
+      font-family: FontAwesome;
+      vertical-align:top; /*different heights on the inline-block elements make them appear at different offsets from the parent, this normalizes this issue*/
+      font-weight: 100;
+      font-size: 0;
+      padding: 25pt 0;
+      a {
+        display:inline-block;
+        width:25%;
+        font-size: 40pt;
+        color: inherit;
+        text-decoration: none;
+        position: relative;
+      }
+    }
+  }
+  &.features {
+    background: $featuresColor;
+  }
+  &.features, &.footer {
+    .paragraph {
+      text-align: justify;
+    }
+  }
+  &.love {
+    background: $loveColor;
+  }
+
+  p.relocation {
+    font-variant: small-caps;
+    font-size: 2em;
+  }
+
+  &.footer {
+    background: $footerColor;
+  }
+  // Use & to chain parent elements. this outputs to .section.header,
+  // which selects the HTML Element with both classes
+  &.header{
+    //padding-top:$sectionSpacing*3;
+    .pitch{
+      font-size: 1.8em;
+    }
+  }
+  //&.footer{
+  //  padding-bottom:$sectionSpacing*3;
+  //}
+
+  ul {
+    text-align: left;
+    font-size: .85em;
+    font-weight: bold;
+  }
+  li {
+    margin-bottom: .3em;
+  }
+}
+
+.popup{
+  &:before {
+    display: none;
+    vertical-align: middle;
+    content: attr(data-content);
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    margin-left: -50px;
+    background: #FFF;
+    font-size: 0.8em;
+    line-height: normal;
+    /* height: 150px; */
+    padding: 25px 20px;
+    box-sizing: border-box;
+    width: 150px;
+    border-radius: 50%;
+    color: black;
+    text-align: center;
+    font-family: $popupFont;
+    font-weight: 100;
+    z-index: 2000;
+    line-height: 1.33em;
+    font-size: 10pt;
+  }
+
+  /*&:after{
+    display: none;
+    width: 40px;
+    content: "";
+    height: 40px;
+    background: #FFF;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    margin-left: -10px;
+    @include transform(rotate(45deg));
+    z-index: 1000;
+    pointer-events:none;
+  }*/
+  &:hover:before/*,
+  &:hover:after*/{
+    display: block;
+  }
+}
+
+// media queries
+@media screen and (min-width: 640px) {
+  /*.content {
+    width: 60%
+  }
+  .logo {
+    font-size: 1.5em;
+  }
+  .section {
+    padding: $sectionSpacing*1.5 0;
+  }*/
+}
+

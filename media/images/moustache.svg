@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="408.64917"
+   height="86.787949"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="moustache.svg">
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Mustache, no background, cool</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs13" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="724"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="1.345"
+     inkscape:cx="167.8856"
+     inkscape:cy="-20.160194"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <title
+     id="title4">Mustache, no background, cool</title>
+  <path
+     style="fill:#000000;fill-opacity:1;stroke:none"
+     d="M 167.14184,0.01841735 C 121.53544,1.2402974 65.684814,62.792677 37.204334,51.424667 16.203874,43.042327 22.578004,8.9321374 45.766834,8.1121674 6.627844,3.5363774 -22.958307,63.757057 24.329334,80.143413 c 45.469982,15.75649 143.425406,1.49292 174.562506,-21.874996 2.20878,-1.65765 4.00447,-3.5715 5.4375,-5.6875 1.43303,2.116 3.22872,4.02985 5.4375,5.6875 31.1371,23.367916 129.09252,37.631486 174.5625,21.874996 47.28764,-16.386356 17.67024,-76.6070356 -21.46875,-72.0312456 23.18883,0.81997 29.59421,34.9301596 8.59375,43.3124996 -33.75464,13.4732 -105.93421,-75.48171 -153.96875,-45.0312496 -5.64466,3.57831 -10.13891,8.7300596 -13.15625,14.4999996 -3.01734,-5.76994 -7.51159,-10.9216896 -13.15625,-14.4999996 -7.5054,-4.75788 -15.58562,-6.60127005 -24.03125,-6.37500005 z"
+     id="path2992"
+     inkscape:connector-curvature="0" />
+</svg>
