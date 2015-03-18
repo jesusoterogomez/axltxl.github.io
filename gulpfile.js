@@ -8,7 +8,8 @@ var gulp       = require('gulp'),
     connect    = require('gulp-connect'),
     open       = require('gulp-open'),
     clean      = require('gulp-clean'),
-    minifyHTML = require('gulp-minify-html');;
+    minifyHTML = require('gulp-minify-html'),
+    ghPages    = require('gulp-gh-pages');
 
 // Utilities
 
@@ -142,5 +143,6 @@ gulp.task('clean', function() {
 
 // Deploy
 gulp.task('deploy', ['build:dist'], function(){
-
+  return gulp.src(dir_dist + '**')
+         .pipe(ghPages({branch:'master'}));
 });
