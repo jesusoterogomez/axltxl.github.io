@@ -63,6 +63,7 @@ body{
   width:$contentWidth;
   margin:0 auto;
   text-align:center;
+  max-width: 35em;
 }
 
 .pitch, .title {
@@ -90,6 +91,8 @@ body{
     font-size: .9em;
     line-height: 1.4em;
     font-weight: 400;
+    /*max-width: 35em;*/
+    /*margin: 0 auto;*/
   }
   .paragraph, ul {
     padding:10px 0;
@@ -169,14 +172,15 @@ body{
       vertical-align:top; /*different heights on the inline-block elements make them appear at different offsets from the parent, this normalizes this issue*/
       font-weight: 100;
       font-size: 0;
-      padding: 25pt 0;
+      padding-top: 25pt;
       a {
-        display:inline-block;
-        width:25%;
-        font-size: 40pt;
+        display: inline-block;
+        width: 50%;
+        font-size: 80pt;
         color: inherit;
         text-decoration: none;
         position: relative;
+        margin-bottom: .6em;
       }
     }
   }
@@ -269,15 +273,32 @@ body{
 }
 
 // media queries
-@media screen and (min-width: 640px) {
-  /*.content {
-    width: 60%
+@media screen and (min-width: 545px) {
+  .section.social nav a {
+    width: 25%;
   }
-  .logo {
-    font-size: 1.5em;
+}
+@media screen and (min-width: 700px) {
+  .section.social nav a {
+    font-size: 100pt;
   }
-  .section {
-    padding: $sectionSpacing*1.5 0;
+  /*.section li {
+    width: 50%;
   }*/
+}
+@media screen and (min-width: 940px) {
+  .section {
+    &.social nav a {
+      font-size: 120pt;
+    }
+    &.logo h1 {
+      font-size: 7em;
+    }
+  }
+}
+@media screen and (min-width: 1320px) {
+  .section.social nav a {
+    font-size: 140pt;
+  }
 }
 
