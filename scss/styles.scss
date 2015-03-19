@@ -55,6 +55,18 @@ $sectionSpacing: 3em;
 }
 
 @include keyframes(popup) {
+  0% {
+    @include transform(scale(0,0))
+  }
+  20% {
+    @include transform(scale(0.2,0.2))
+  }
+  75% {
+    @include transform(scale(1.5,1.5))
+  }
+  100% {
+    @include transform(scale(1.0,1.0))
+  }
 }
 
 // Mobile Layout
@@ -296,6 +308,7 @@ body{
   &:hover:before/*,
   &:hover:after*/{
     display: block;
+    @include animation(popup .3s ease-out);
   }
 }
 
