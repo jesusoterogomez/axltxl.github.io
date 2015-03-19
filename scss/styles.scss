@@ -46,6 +46,19 @@ $loveColor:       mix($featuresColor, $footerColor);
 // Spacing
 $sectionSpacing: 3em;
 
+
+// Cool animations
+
+@include keyframes(wiggle) {
+  50% {@include transform(rotate(6deg));}
+  100% {@include transform(rotate(-6deg));}
+}
+
+@include keyframes(popup) {
+  from {@include transform(rotate(0));}
+  to {@include transform(rotate(-15deg));}
+}
+
 // Mobile Layout
 
 html{
@@ -140,8 +153,14 @@ body{
         left: 0;
         top: 15%;
       }
+      .hat:hover {
+        @include animation(popup 1s ease);
+      }
       .moustache, .hat {
         @include filter(invert(10%) drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.5)));
+      }
+      .moustache:hover {
+        @include animation(wiggle .3s ease infinite);
       }
     }
 
