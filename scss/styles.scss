@@ -55,8 +55,6 @@ $sectionSpacing: 3em;
 }
 
 @include keyframes(popup) {
-  from {@include transform(rotate(0));}
-  to {@include transform(rotate(-15deg));}
 }
 
 // Mobile Layout
@@ -152,9 +150,10 @@ body{
         background-repeat: no-repeat;
         left: 0;
         top: 15%;
+        @include transition(all 0.3s ease);
       }
       .hat:hover {
-        @include animation(popup 1s ease);
+        @include transform(rotate(-15deg));
       }
       .moustache, .hat {
         @include filter(invert(10%) drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.5)));
