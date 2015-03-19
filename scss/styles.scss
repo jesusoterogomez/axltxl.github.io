@@ -46,6 +46,29 @@ $loveColor:       mix($featuresColor, $footerColor);
 // Spacing
 $sectionSpacing: 3em;
 
+
+// Cool animations
+
+@include keyframes(wiggle) {
+  50% {@include transform(rotate(6deg));}
+  100% {@include transform(rotate(-6deg));}
+}
+
+@include keyframes(popup) {
+  0% {
+    @include transform(scale(0,0))
+  }
+  20% {
+    @include transform(scale(0.2,0.2))
+  }
+  75% {
+    @include transform(scale(1.5,1.5))
+  }
+  100% {
+    @include transform(scale(1.0,1.0))
+  }
+}
+
 // Mobile Layout
 
 html{
@@ -139,9 +162,16 @@ body{
         background-repeat: no-repeat;
         left: 0;
         top: 15%;
+        @include transition(all 0.3s ease);
+      }
+      .hat:hover {
+        @include transform(rotate(-15deg));
       }
       .moustache, .hat {
         @include filter(invert(10%) drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.5)));
+      }
+      .moustache:hover {
+        @include animation(wiggle .3s ease infinite);
       }
     }
 
@@ -278,6 +308,7 @@ body{
   &:hover:before/*,
   &:hover:after*/{
     display: block;
+    @include animation(popup .3s ease-out);
   }
 }
 
