@@ -123,8 +123,11 @@ body{
         background-size: 150px auto;
         background-repeat: no-repeat;
         right: 4%;
-        bottom: -8px;
+        bottom: 15%;
         @include transform(rotate(-7deg));
+      }
+      span {
+        position: relative;
       }
       .hat {
         width:  64px;
@@ -134,8 +137,8 @@ body{
         background-position: left top;
         background-size: 64px auto;
         background-repeat: no-repeat;
-        left: 12%;
-        top:  0;
+        left: 0;
+        top: 15%;
       }
       .moustache, .hat {
         @include filter(invert(10%) drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.5)));
