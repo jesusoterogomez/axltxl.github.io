@@ -97,6 +97,12 @@ body{
   .paragraph, ul {
     padding:10px 0;
   }
+
+  /* Text quality */
+  .paragraph, .popup {
+    text-rendering: optimizeLegibility;
+  }
+
   &.logo {
     font-family: $logoFont;
     background:  $logoColor;
