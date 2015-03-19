@@ -4,7 +4,7 @@
 
 // The so-called gulp modules
 var gulp       = require('gulp'),
-    sass       = require('gulp-ruby-sass'),
+    compass    = require('gulp-compass'),
     connect    = require('gulp-connect'),
     open       = require('gulp-open'),
     clean      = require('gulp-clean'),
@@ -71,16 +71,24 @@ gulp.task('media:dist', function(){
   return task_media(dir_dist);
 });
 
-// Compile SCSS (SaSS)
+// Compile SCSS (via compass)
+
+function log_err (e) {
+    //If you want details of the error in the console
+    console.log(e.toString());
+    this.emit('end');
+}
 
 function task_sass (options, dst_dir) {
-  var opt_defaults = {compass:true};
-  return sass('scss/styles.scss',
-    merge_options(opt_defaults, options))
-  .on('error', function (err) {
-    console.log(err.message);
-  })
-  .pipe(gulp.dest(dst_dir + 'css/'));
+  var opt_defaults = {
+    css: 'css',
+    sass: 'scss',
+    bundle_exec: true
+  }
+  return gulp.src('scss/**/*.scss')
+    .pipe(compass(merge_options(opt_defaults, options)))
+    .on('error', log_err)
+    .pipe(gulp.dest(dst_dir + '/css'))
 }
 
 gulp.task('styles', function() {
@@ -138,6 +146,8 @@ gulp.task('clean', function() {
   gulp.src(dir_build, {read: false})
   .pipe(clean({force:true}))
   gulp.src('.sass-cache', {read: false})
+  .pipe(clean({force:true}))
+  gulp.src('css', {read: false})
   .pipe(clean({force:true}))
 });
 
