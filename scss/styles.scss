@@ -125,7 +125,6 @@ body{
   .paragraph, .popup {
     text-rendering: optimizeLegibility;
   }
-
   &.logo {
     font-family: $logoFont;
     background:  $logoColor;
@@ -137,6 +136,7 @@ body{
       max-width: 640px;
       position: relative;
       margin: 0 auto;
+      left: -0.1em;
       .moustache {
         width: 150px;
         height: 32px;
@@ -148,6 +148,7 @@ body{
         right: 4%;
         bottom: 15%;
         @include transform(rotate(-7deg));
+        @include animation(wiggle .3s ease infinite);
       }
       span {
         position: relative;
@@ -314,6 +315,11 @@ body{
 
 // media queries
 @media screen and (min-width: 545px) {
+  
+
+.section.logo h1 .moustache{
+        @include animation(none);
+      }
   .section.social nav a {
     width: 25%;
   }
